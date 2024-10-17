@@ -17,7 +17,5 @@ class HR(private val employees: List<Employee> = emptyList()) {
         return HR(newEmployeeList)
     }
 
-    fun payEmployees() : Double {
-        return employees.sumOf { it.pay() }
-    }
+    fun payEmployees() : Double { return employees.sumOf { it.pay() } }
 }

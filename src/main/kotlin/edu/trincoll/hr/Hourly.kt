@@ -17,11 +17,7 @@ class Hourly(
     id: Int,
     private val rate: Double,
     private val hours: Double = 80.0) : Employee(name, id) {
-    override fun pay(): Double{
-       return this.rate * this.hours
-    }
+    override fun pay(): Double{ return this.rate * this.hours }
 
-    override fun toString(): String {
-        return "Hourly(name=$name, id=$id, rate=$rate, hours=$hours)"
-    }
+    override fun toString(): String { return "Hourly(name=$name, id=$id, rate=$rate, hours=$hours)" }
 }

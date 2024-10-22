@@ -18,8 +18,9 @@ abstract class Employee(
     abstract fun pay(): Double
 
 
-    override fun compareTo(other: Employee): Int { return this.id.compareTo(other.id) }
-
+    override fun compareTo(other: Employee): Int {
+        return compareValuesBy(this, other, { it.pay() }, { it.name }, { it.id })
+    }
 
 
     override fun toString(): String { return "Employee(name=$name, id=$id)" }

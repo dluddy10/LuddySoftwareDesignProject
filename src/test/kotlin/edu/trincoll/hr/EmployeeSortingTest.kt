@@ -1,3 +1,4 @@
+
 package edu.trincoll.hr
 
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -16,7 +17,7 @@ class EmployeeSortingTest {
 
         val sortedEmployees = employees.sorted()
 
-        assertEquals(listOf("Alice", "Bob", "Charlie"),
+        assertEquals(listOf("Bob", "Charlie", "Alice"),
             sortedEmployees.map { it.name })
     }
 
@@ -30,7 +31,7 @@ class EmployeeSortingTest {
 
         val sortedEmployees = employees.sorted()
 
-        assertEquals(listOf("Charlie", "Alice", "Bob"),
+        assertEquals(listOf("Alice", "Bob", "Charlie"),
             sortedEmployees.map { it.name })
     }
 
@@ -50,15 +51,15 @@ class EmployeeSortingTest {
     @Test
     fun `test sorting mixed employee types`() {
         val employees = listOf(
-            Salaried("Alice", 1, 52000.0),    // 2000 per pay period
-            Hourly("Bob", 2, 25.0, 80.0),  // 2000 per pay period
-            Salaried("Charlie", 3, 60000.0),  // 2307.69 per pay period
-            Hourly("David", 4, 30.0, 70.0)  // 2100 per pay period
+            Salaried("Alice", 1, 52000.0),     //2000 per pay period
+            Hourly("Bob", 2, 25.0, 80.0),   //2000 per pay period
+            Salaried("Charlie", 3, 60000.0),   //2307.69 per pay period
+            Hourly("David", 4, 30.0, 70.0)   //2100 per pay period
         )
 
         val sortedEmployees = employees.sorted()
 
-        assertEquals(listOf("Alice", "Bob", "Charlie", "David"),
+        assertEquals(listOf("Alice", "Bob", "David", "Charlie"),
             sortedEmployees.map { it.name })
     }
 }
